@@ -1,0 +1,32 @@
+# deps
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# runtime data (database, generated secrets)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+
+# editor / os
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# test / coverage
+coverage/
+.tmp/

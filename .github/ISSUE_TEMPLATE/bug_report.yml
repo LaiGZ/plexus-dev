@@ -1,0 +1,45 @@
+name: Bug report
+description: Something is broken
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Do **not** include tokens, upstream credentials, or private URLs.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you expect, and what did you get?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Add source ...
+        2. Expose tool ...
+        3. Call from ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: From the Overview page or `GET /healthz`
+      placeholder: 0.1.0
+  - type: dropdown
+    id: deploy
+    attributes:
+      label: How are you running it?
+      options:
+        - Docker
+        - From source (pnpm)
+        - Other
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or requestId
+      description: Structured log lines or the `requestId` from the error
+      render: shell

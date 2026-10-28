@@ -1,0 +1,7 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# pnpm 11 requires explicit permission for install scripts of native deps.
+allowBuilds:
+  esbuild: true

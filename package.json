@@ -1,0 +1,31 @@
+{
+  "name": "plexus",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Your APIs, as MCP tools. A single-binary personal MCP gateway.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@11.3.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @plexus/contracts build && pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm --filter @plexus/contracts build && pnpm -r typecheck",
+    "lint": "eslint .",
+    "test": "pnpm -r test",
+    "format": "prettier --write .",
+    "db:generate": "pnpm --filter @plexus/server db:generate",
+    "start": "pnpm --filter @plexus/server start",
+  "cli": "node scripts/plexus.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.19.0"
+  }
+}
