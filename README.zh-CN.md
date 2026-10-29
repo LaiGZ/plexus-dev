@@ -1,8 +1,8 @@
 # plexus
 
-**把你的 API 变成 MCP 工具。** 单进程的个人 MCP Hub。
+**把你的 API 变成 MCP 工具。** 个人版 MCP 网关 —— 一个端点、一个令牌、一个进程。
 
-[![CI](https://github.com/LaiGZ/plexus-personal/actions/workflows/ci.yml/badge.svg)](https://github.com/LaiGZ/plexus-personal/actions/workflows/ci.yml)
+[![CI](https://github.com/LaiGZ/plexus-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/LaiGZ/plexus-dev/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg)](package.json)
 
@@ -11,6 +11,8 @@
 把 plexus 指向一个 HTTP API、一份 OpenAPI 文档，或一个远程 MCP 服务器，勾选要开放的方法，
 然后把一个 MCP 端点交给 Claude、Cursor、VS Code 或任意 MCP 客户端。一个管理员、一个 SQLite
 文件、一个进程 —— 不需要云账号、没有租户模型、没有权限配置页。
+
+plexus 不运行你的 agent，也不托管你的应用。它站在两者之间：管住工具契约、凭据和调用记录。
 
 ```
 OpenAPI / HTTP / MCP ──▶ 应用 ──▶ 方法 ──▶ 工具 ──▶ POST /mcp
@@ -102,7 +104,7 @@ docker build -t plexus .
 docker run --rm -p 3000:3000 -v plexus-data:/data plexus
 ```
 
-打 tag 发版时会推送多架构镜像到 GHCR（`ghcr.io/laigz/plexus-personal`）；在那之前请本地构建。
+打 tag 发版时会推送多架构镜像到 GHCR（`ghcr.io/laigz/plexus-dev`）；在那之前请本地构建。
 
 首次启动会创建管理员 `plexus`，并**只打印一次**随机密码：
 

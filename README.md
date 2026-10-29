@@ -1,8 +1,8 @@
 # plexus
 
-**Your APIs, as MCP tools.** A personal MCP hub in a single process.
+**Your APIs, as MCP tools.** A personal MCP gateway — one endpoint, one token, one process.
 
-[![CI](https://github.com/LaiGZ/plexus-personal/actions/workflows/ci.yml/badge.svg)](https://github.com/LaiGZ/plexus-personal/actions/workflows/ci.yml)
+[![CI](https://github.com/LaiGZ/plexus-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/LaiGZ/plexus-dev/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg)](package.json)
 
@@ -11,6 +11,9 @@
 Point plexus at an HTTP API, an OpenAPI document, or a remote MCP server. Pick the methods to
 expose, and hand one MCP endpoint to Claude, Cursor, VS Code, or any MCP client. One admin, one
 SQLite file, one process — no cloud account, no tenant model, no permission screens.
+
+It does not run your agents or host your apps. It sits between them: it owns the tool contracts,
+the credentials, and the audit trail.
 
 ```
 OpenAPI / HTTP / MCP ──▶ App ──▶ Methods ──▶ Tools ──▶ POST /mcp
@@ -106,7 +109,7 @@ docker run --rm -p 3000:3000 -v plexus-data:/data plexus
 ```
 
 Prebuilt multi-arch images are published to GHCR on tagged releases
-(`ghcr.io/laigz/plexus-personal`); until then, build locally.
+(`ghcr.io/laigz/plexus-dev`); until then, build locally.
 
 The first boot creates the admin `plexus` with a random password, printed **once**:
 
